@@ -1,7 +1,7 @@
 package Lesson_4;
 
 public class MyLinkedStack<T> {
-    private MyLinkedList<T> ll = new MyLinkedList<>();
+    private final MyLinkedList<T> ll = new MyLinkedList<>();
 
     public void push(T item){
         ll.insertLast(item);
