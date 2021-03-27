@@ -48,16 +48,17 @@ public class Backpack {
             }
         }
     }
-
-    public void bruteForceList(ArrayList<Item> items) {
+    // перебор вариантов рекурсией
+    public void solve(ArrayList<Item> items) {
         if (items.size() == 0) {
             return;
         }
+
         checkItemsBest(items);
         for (int i = 0; i < items.size(); i++) {
             ArrayList<Item> newItems = new ArrayList<>(items);
             newItems.remove(i);
-            bruteForceList(newItems);
+            solve(newItems);
         }
     }
 }

@@ -15,7 +15,7 @@ public class main {
         items.add(new Item("Котелок",1  ,500));
         System.out.println(items);
         Backpack bp=new Backpack(4);
-        bp.bruteForceList(items);
+        bp.solve(items);
         System.out.println(bp.getBestItems());
         System.out.printf( String.valueOf(bp.getBestPrice()));
 
