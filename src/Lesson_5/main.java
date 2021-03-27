@@ -23,8 +23,8 @@ public class main {
     }
     /*Написать программу по возведению числа в степень с помощью рекурсии.*/
     public static long pow(int x,int n){
-        if(n==1){
-            return x;
+        if(n==0){
+            return 1;
         }
         return x*pow(x,n-1);
     }
