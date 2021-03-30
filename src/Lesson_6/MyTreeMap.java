@@ -33,8 +33,19 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
     }
 
     public boolean isBalance(){
-        return (isEmpty() || Math.abs(depth(root.left)-depth(root.right))<=1);
+        return isBalance(root);
     }
+
+    private boolean isBalance(Node node){
+        if (node==null){
+            return true;
+        }
+        if (Math.abs(depth(node.left)-depth(node.right))<=1 && isBalance(node.left)&& isBalance(node.right)){
+            return true;
+        }
+        return false;
+    }
+
 
     public int depth(){
         return depth(root);

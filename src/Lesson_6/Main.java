@@ -1,23 +1,27 @@
 package Lesson_6;
-
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<MyTreeMap> arr=new ArrayList<>();
         Random r=new Random();
-        int tmp;
-        MyTreeMap<Integer, String> map = new MyTreeMap<>();
-        while (map.depth()<6){
-            tmp=r.nextInt(201) - 100;
-            System.out.println(tmp);
-            map.put(tmp , "test");
+        int count;
+        int balance=0;
+        for (count = 0; count <200000 ; count++) {
+            MyTreeMap<Integer, String> map = new MyTreeMap<>();
+            int key=0;
+            while (map.depth()<7){
+                key=r.nextInt(201) - 100;
+                map.put(key, "test"+key);
+            }
+            map.delele(key);
+            if (map.isBalance()){
+                balance++;
+            }
+            map=null;
         }
-        System.out.println("isBalance: " + map.isBalance());
-        System.out.println(map);
-        System.out.println("depth: "+map.depth());
-        map.delele(4);
-        System.out.println(map);
+        System.out.println("Balance: "+ balance);
+        System.out.println("percentage of balanced trees: "+(float)balance/count*100 + "%");
+
+
     }
 }
